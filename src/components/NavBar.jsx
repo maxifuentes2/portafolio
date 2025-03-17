@@ -35,8 +35,6 @@ export default function NavBar({ darkMode }) {
                 </NavLink>
             </div>
             <div className={`overlay ${isMenuOpen ? 'active' : ''}`} onClick={closeMenu}></div>
-
-            {/* Reemplazar el botón de hamburguesa por la imagen */}
             <img 
                 src={menuIcon} 
                 alt="Abrir menú" 
