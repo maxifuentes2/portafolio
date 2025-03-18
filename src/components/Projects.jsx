@@ -36,7 +36,7 @@ export default function ProjectsSection() {
                         <h3>Proyecto 2: Curso de Javascript de CoderHouse</h3>
                         <p>Página web de gestión de stock de un almacén realizada utilizando HTML, CSS y Javascript</p>
                         <a href="https://maxifuentes2.github.io/proyectoFinalFuentes/" target="_blank" rel="noopener noreferrer" className="project-link">
-                            Ver Página
+                            Ver Página (usuario: maxifuentes contraseña: coderhouse)
                         </a>
                         <a href="https://github.com/maxifuentes2/proyectoFinalFuentes" target="_blank" rel="noopener noreferrer" className="project-link">
                             Ver en GitHub
@@ -54,7 +54,7 @@ export default function ProjectsSection() {
                         <h3>Proyecto 3: Curso de React.js de CoderHouse</h3>
                         <p>Página web de ecommerce realizada utilizando React.js</p>
                         <a href="https://proyecto-final-fuentes-reactjs.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link">
-                            Ver Página (usuario: maxifuentes contraseña: coderhouse)
+                            Ver Página
                         </a>
                         <a href="https://github.com/maxifuentes2/proyecto-final-fuentes-reactjs" target="_blank" rel="noopener noreferrer" className="project-link">
                             Ver en GitHub
