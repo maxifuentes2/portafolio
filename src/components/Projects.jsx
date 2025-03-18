@@ -1,16 +1,18 @@
-import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Mensaje from "./Message.jsx";
-import Card from "./Card.jsx"
 import "./Projects.css";
-
-
 
 export default function ProjectsSection() {
     return (
         <div className="projects-section">
-        <Mensaje texto="Estos son algunos de mis proyectos realizados." />
+            <Mensaje texto="Estos son algunos de mis proyectos" />
             <div className="project-list">
-                <div className="project-item">
+                <motion.div
+                    className="project-item"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                >
                     <img src="/project1.png" alt="Proyecto 1" />
                     <div className="project-content">
                         <h3>Proyecto 1: Curso de diseño web de CoderHouse</h3>
@@ -22,12 +24,17 @@ export default function ProjectsSection() {
                             Ver en GitHub
                         </a>
                     </div>
-                </div>
-                <div className="project-item">
+                </motion.div>
+                <motion.div
+                    className="project-item"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                >
                     <img src="/project2.png" alt="Proyecto 2" />
                     <div className="project-content">
                         <h3>Proyecto 2: Curso de Javascript de CoderHouse</h3>
-                        <p>Página web de gestion de stock de un almacén realizada utilizando HTML, CSS y Javascript</p>
+                        <p>Página web de gestión de stock de un almacén realizada utilizando HTML, CSS y Javascript</p>
                         <a href="https://maxifuentes2.github.io/proyectoFinalFuentes/" target="_blank" rel="noopener noreferrer" className="project-link">
                             Ver Página
                         </a>
@@ -35,9 +42,13 @@ export default function ProjectsSection() {
                             Ver en GitHub
                         </a>
                     </div>
-                    
-                </div>
-                <div className="project-item">
+                </motion.div>
+                <motion.div
+                    className="project-item"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                >
                     <img src="/project3.png" alt="Proyecto 3" />
                     <div className="project-content">
                         <h3>Proyecto 3: Curso de React.js de CoderHouse</h3>
@@ -49,8 +60,7 @@ export default function ProjectsSection() {
                             Ver en GitHub
                         </a>
                     </div>
-                    
-                </div>
+                </motion.div>
             </div>
         </div>
     );

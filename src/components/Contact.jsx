@@ -1,21 +1,40 @@
+import { motion } from "framer-motion";
 import "./Contact.css";
 
 export default function ContactSection() {
     return (
-        <div className="contact-section">
-            <h2>Contáctame</h2>
-            <p>Email: <a href="mailto:estudiante@example.com">estudiante@example.com</a></p>
-            <p>
+        <motion.div
+            className="contact-section"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+        >
+            <motion.h2
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+            >
+                Contáctame
+            </motion.h2>
+
+            <motion.p
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7 }}
+            >
+                Email: <a href="mailto:estudiante@example.com">maximofuentes@dev.com</a>
+            </motion.p>
+
+            <motion.p
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+            >
                 LinkedIn:{" "}
-                <a
-                    href="https://linkedin.com/in/tu-perfil"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                <a href="https://www.linkedin.com/in/máximo-fuentes-b74a092aa" target="_blank" rel="noopener noreferrer">
                     Mi perfil
                 </a>
-            </p>
-            <p>Teléfono: +54 9 261 123-4567</p>
-        </div>
+            </motion.p>
+        </motion.div>
     );
 }
