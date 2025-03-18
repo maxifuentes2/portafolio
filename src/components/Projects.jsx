@@ -53,7 +53,7 @@ export default function ProjectsSection() {
                     <div className="project-content">
                         <h3>Proyecto 3: Curso de React.js de CoderHouse</h3>
                         <p>Página web de ecommerce realizada utilizando React.js</p>
-                        <a href="https://proyecto-final-fuentes-reactjs.vercel.app/n" target="_blank" rel="noopener noreferrer" className="project-link">
+                        <a href="https://portafolio-gamma-lovat.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link">
                             Ver Página
                         </a>
                         <a href="https://github.com/maxifuentes2/proyecto-final-fuentes-reactjs" target="_blank" rel="noopener noreferrer" className="project-link">
