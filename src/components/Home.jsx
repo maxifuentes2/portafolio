@@ -12,7 +12,7 @@ export default function HomeSection() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
         >
-            <Mensaje texto="¡Hola, bienvenido a mi portafolio!" />
+            <Mensaje texto="¡Bienvenido a mi portafolio!" />
             
             <motion.h2
                 initial={{ y: -20, opacity: 0 }}
