@@ -22,7 +22,7 @@ export default function ContactSection() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7 }}
             >
-                Email: <a href="mailto:estudiante@example.com">maximofuentes@dev.com</a>
+                Email: <a href="mailto:maximofuentesdev@gmail.com">maximofuentesdev@gmail.com</a>
             </motion.p>
 
             <motion.p
