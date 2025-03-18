@@ -38,7 +38,7 @@ export default function HomeSection() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.7 }}
                 >
-                    📍 Ubicación: Mendoza, Argentina 🇦🇷
+                    📍 Ubicación: Mendoza, Argentina 
                 </motion.p>
                 
                 <motion.p
