@@ -68,13 +68,20 @@ h2 {
 .biography {
     margin-top: 50px;
     padding: 30px;
-    border: 1px solid white;
+    border: 1px solid rgba(61, 61, 61, 0.356); /* Borde en modo claro */
+    box-shadow: 0 0 5px 1px #2b2b2b; /* Sombra en modo claro */
     border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .biography {
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde en modo oscuro */
+    box-shadow: 0 0 1px 1px #f6f6f6; /* Glow mínimo en modo oscuro */
 }
 
 .title-biography {
     text-align: left;
-    margin-left: 10px;
+    margin-left: 10;
 }
 
 .text-biography {

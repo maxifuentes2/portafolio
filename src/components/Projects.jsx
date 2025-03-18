@@ -8,7 +8,7 @@ import "./Projects.css";
 export default function ProjectsSection() {
     return (
         <div className="projects-section">
-            <h2>Proyectos realizados</h2>
+        <Mensaje texto="Estos son algunos de mis proyectos realizados." />
             <div className="project-list">
                 <div className="project-item">
                     <img src="/project1.png" alt="Proyecto 1" />
@@ -23,7 +23,6 @@ export default function ProjectsSection() {
                         </a>
                     </div>
                 </div>
-
                 <div className="project-item">
                     <img src="/project2.png" alt="Proyecto 2" />
                     <div className="project-content">
@@ -43,7 +42,7 @@ export default function ProjectsSection() {
                     <div className="project-content">
                         <h3>Proyecto 3: Curso de React.js de CoderHouse</h3>
                         <p>Página web de ecommerce realizada utilizando React.js</p>
-                        <a href="https://proyecto-final-fuentes-reactjs.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link">
+                        <a href="https://proyecto-final-fuentes-reactjs.vercel.app/n" target="_blank" rel="noopener noreferrer" className="project-link">
                             Ver Página
                         </a>
                         <a href="https://github.com/maxifuentes2/proyecto-final-fuentes-reactjs" target="_blank" rel="noopener noreferrer" className="project-link">

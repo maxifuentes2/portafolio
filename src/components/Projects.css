@@ -42,7 +42,7 @@
 }
 
 .project-item a {
-    display: block; /* Hace que los enlaces se apilen verticalmente */
+    display: block;
     margin-top: 0.5rem;
     color: #007bff;
     text-decoration: none;
@@ -66,4 +66,8 @@
 
 .dark-mode .project-item h3 {
     color: #f6f6f6;
+}
+
+h1 {
+    margin-bottom: 100px;
 }
