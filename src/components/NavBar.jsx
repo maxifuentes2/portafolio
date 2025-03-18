@@ -21,8 +21,6 @@ export default function NavBar({ darkMode }) {
             <Link to="/">
                 <img src={logoSrc} alt="Logo" className="pagelogo" />
             </Link>
-
-            {/* Sidebar */}
             <div className={`sidebar ${isMenuOpen ? 'open' : ''}`}>
                 <NavLink to="/" onClick={toggleMenu}>
                     <ButtonComponent text="Inicio" />

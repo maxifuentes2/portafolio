@@ -57,11 +57,11 @@
 
 .dark-mode .card {
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 1px 1px #f6f6f6; /* Glow mínimo en modo oscuro */
+    box-shadow: 0 0 1px 1px #f6f6f6;
 }
 
 .dark-mode .card:hover {
-    box-shadow: 0 6px 15px #f6f6f6; /* Glow fuerte en modo oscuro */
+    box-shadow: 0 6px 15px #f6f6f6;
 }
 
 .dark-mode .card h3 {

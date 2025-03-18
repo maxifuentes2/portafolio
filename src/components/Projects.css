@@ -68,6 +68,11 @@
     color: #f6f6f6;
 }
 
-h1 {
+.projects-section h1 {
     margin-bottom: 100px;
+    color: #333;
+}
+
+.dark-mode .projects-section h1 {
+    color: #f6f6f6;
 }
