@@ -19,7 +19,7 @@ export default function HomeSection() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
             >
-                Estudiante de la Licenciatura en Informática y Desarrollo de Software.
+                Estudiante de Lic en Informática y Desarrollo de Software.
             </motion.h2>
             
             <div className="biography">
