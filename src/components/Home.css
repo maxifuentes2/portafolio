@@ -1,13 +1,19 @@
 .home {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     text-align: center;
     padding: 2rem;
     color: #000;
+
 }
 
 .dark-mode .home {
     color: #d3d3c5;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 50px;
 }
 
 .home p {
@@ -57,4 +63,20 @@
         flex-direction: column;
         align-items: center;
     }
+}
+
+.biography {
+    margin-top: 50px;
+    padding: 30px;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
+.title-biography {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.text-biography {
+    text-align: left;
 }

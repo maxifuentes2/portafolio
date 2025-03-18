@@ -6,6 +6,8 @@ import Footer from './components/Footer.jsx';
 import ThemeToggle from './components/ThemeToggle.jsx'; // Importamos el botón flotante
 import './App.css';
 import './components/NavBar.css';
+import './components/Footer.css';
+
 
 function App() {
     const [darkMode, setDarkMode] = useState(() => {

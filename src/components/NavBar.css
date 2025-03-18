@@ -14,6 +14,11 @@ header {
     cursor: pointer;
     transition: transform 0.3s ease;
     color: white;
+    margin-left: 20px;
+}
+
+.pagelogo:hover {
+    transform: scale(1.1);
 }
 
 .dark-mode .pagelogo {
@@ -77,12 +82,18 @@ header {
 
 .sidebar-toggle {
     width: 60px;
+    margin-right: 20px;
     height: 60px;
     cursor: pointer;
     z-index: 1001;
     padding: 0;
     border-radius: 5px;
     background-size: cover;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    transform: scale(1.1);
 }
 
 .overlay {
