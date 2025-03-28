@@ -29,7 +29,7 @@ export default function HomeSection() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.7 }}
                 >
-                    🌍 Sobre mí
+                    Sobre mí
                 </motion.h3>
                 
                 <motion.p
@@ -74,7 +74,7 @@ export default function HomeSection() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.7, delay: 0.8 }}
                 >
-                    - CoderHouse (Full Stack Developer 2024 - 2025)
+                    · CoderHouse (Full Stack Developer 2024 - 2025)
                 </motion.p>
             </div>
 
