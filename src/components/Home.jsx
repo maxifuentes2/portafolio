@@ -38,7 +38,7 @@ export default function HomeSection() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.7 }}
                 >
-                    📍 Ubicación: Mendoza, Argentina 
+                    · Ubicación: Mendoza, Argentina 
                 </motion.p>
                 
                 <motion.p
@@ -47,7 +47,7 @@ export default function HomeSection() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
                 >
-                    🎂 Edad: 20 Años
+                    · Edad: 20 Años
                 </motion.p>
                 
                 <motion.p
@@ -56,7 +56,7 @@ export default function HomeSection() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.7, delay: 0.4 }}
                 >
-                    🎓 Estudios:
+                    · Estudios:
                 </motion.p>
                 
                 <motion.p
@@ -65,7 +65,7 @@ export default function HomeSection() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.7, delay: 0.6 }}
                 >
-                    - Licenciatura en Informática y Desarrollo de Software en la Universidad del Aconcagua, Mendoza. (2025 - Actualidad)
+                    · Licenciatura en Informática y Desarrollo de Software en la Universidad del Aconcagua, Mendoza. (2025 - Actualidad)
                 </motion.p>
                 
                 <motion.p
