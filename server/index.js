@@ -40,38 +40,40 @@ app.post("/api/contact", async (req, res) => {
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 @media only screen and (max-width:600px){
-.body{padding:24px 12px!important}.inner{width:100%!important;max-width:100%!important}.header{padding:24px 20px!important}.header h1{font-size:18px!important}.content{padding:24px 20px!important}.label{width:80px!important;font-size:12px!important}.value{font-size:13px!important}.footer{padding:16px 20px!important}
+.wrap{padding:24px 12px!important}.inner{width:100%!important}.hd{padding:28px 24px!important}.hd h1{font-size:18px!important}.bd{padding:28px 24px!important}.lb{width:auto!important;display:block!important;padding:0 0 2px!important}.vl{padding:0 0 14px!important}.ft{padding:16px 24px!important}
 }
 @media only screen and (max-width:380px){
-.body{padding:16px 8px!important}.header{padding:20px 16px!important}.header h1{font-size:16px!important}.content{padding:20px 16px!important}
+.wrap{padding:16px 8px!important}.hd{padding:24px 20px!important}.hd h1{font-size:16px!important}.bd{padding:24px 20px!important}.ft{padding:14px 20px!important}
 }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#f5f5f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
-<table class="body" role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;padding:40px 16px">
+<table class="wrap" role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;padding:40px 16px">
 <tr><td align="center">
-<table class="inner" role="presentation" width="540" cellpadding="0" cellspacing="0" style="max-width:540px;width:100%;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06)">
-<tr><td class="header" style="background:linear-gradient(135deg,#b91c1c,#e11d48);padding:32px 40px 24px">
-<h1 style="margin:0;color:#fff;font-size:22px;font-weight:700">Nuevo mensaje de contacto</h1>
-<p style="margin:6px 0 0;color:rgba(255,255,255,0.8);font-size:14px">Recibido desde tu portafolio</p>
+<table class="inner" role="presentation" width="540" cellpadding="0" cellspacing="0" style="max-width:540px;width:100%;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.05)">
+<tr><td class="hd" style="padding:32px 40px 20px;border-bottom:1px solid #f0f0f0">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+<tr><td align="left" style="width:40px;padding:0 12px 0 0"><div style="width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,#b91c1c,#e11d48)"></div></td>
+<td align="left"><h1 style="margin:0;font-size:20px;font-weight:700;color:#2d2d2d;letter-spacing:-0.3px">Nuevo mensaje</h1><p style="margin:2px 0 0;font-size:13px;color:#999">Recibido desde tu portafolio</p></td>
+</tr></table>
 </td></tr>
-<tr><td class="content" style="padding:32px 40px">
+<tr><td class="bd" style="padding:28px 40px">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-<tr><td style="padding:0 0 20px">
+<tr><td style="padding:0 0 18px">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-<tr><td class="label" width="80" style="font-size:13px;font-weight:600;color:#888;padding:6px 12px 6px 0;vertical-align:top;white-space:nowrap">Nombre</td><td class="value" style="font-size:14px;color:#333;padding:6px 0;word-break:break-word">${name}</td></tr>
-<tr><td class="label" width="80" style="font-size:13px;font-weight:600;color:#888;padding:6px 12px 6px 0;vertical-align:top;white-space:nowrap">Email</td><td class="value" style="font-size:14px;padding:6px 0;word-break:break-word"><a href="mailto:${email}" style="color:#b91c1c;text-decoration:none">${email}</a></td></tr>
-<tr><td class="label" width="80" style="font-size:13px;font-weight:600;color:#888;padding:6px 12px 6px 0;vertical-align:top;white-space:nowrap">Asunto</td><td class="value" style="font-size:14px;color:#333;padding:6px 0;font-weight:600;word-break:break-word">${subject}</td></tr>
+<tr><td class="lb" width="80" style="font-size:12px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:0.3px;padding:8px 16px 8px 0;vertical-align:top">Nombre</td><td class="vl" style="font-size:14px;color:#2d2d2d;padding:8px 0;word-break:break-word">${name}</td></tr>
+<tr><td class="lb" width="80" style="font-size:12px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:0.3px;padding:8px 16px 8px 0;vertical-align:top">Email</td><td class="vl" style="font-size:14px;padding:8px 0;word-break:break-word"><a href="mailto:${email}" style="color:#b91c1c;text-decoration:none;font-weight:500">${email}</a></td></tr>
+<tr><td class="lb" width="80" style="font-size:12px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:0.3px;padding:8px 16px 8px 0;vertical-align:top">Asunto</td><td class="vl" style="font-size:14px;color:#2d2d2d;padding:8px 0;font-weight:600;word-break:break-word">${subject}</td></tr>
 </table>
 </td></tr>
-<tr><td style="border-top:1px solid #eee;padding:20px 0 0">
-<p style="margin:0 0 8px;font-size:13px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.5px">Mensaje</p>
-<p style="margin:0;font-size:14px;color:#333;line-height:1.7;white-space:pre-wrap;word-break:break-word">${message}</p>
+<tr><td style="border-top:1px solid #f0f0f0;padding:20px 0 0">
+<p style="margin:0 0 10px;font-size:12px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:0.3px">Mensaje</p>
+<p style="margin:0;font-size:14px;color:#6b6b6b;line-height:1.7;white-space:pre-wrap;word-break:break-word">${message}</p>
 </td></tr>
 </table>
 </td></tr>
-<tr><td class="footer" style="background:#fafafa;padding:20px 40px;border-top:1px solid #eee">
-<p style="margin:0;font-size:12px;color:#aaa;text-align:center">Responder a <a href="mailto:${email}" style="color:#b91c1c;text-decoration:none">${email}</a></p>
+<tr><td class="ft" style="padding:16px 40px;border-top:1px solid #f0f0f0;text-align:center;background:#fafafa">
+<p style="margin:0;font-size:12px;color:#bbb">Responder a <a href="mailto:${email}" style="color:#b91c1c;text-decoration:none">${email}</a></p>
 </td></tr>
 </table>
 </td></tr>
