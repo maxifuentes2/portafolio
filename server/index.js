@@ -44,9 +44,9 @@ app.post("/api/contact", async (req, res) => {
     };
 
     try {
-        // No bloqueamos la respuesta si el email falla
         transporter.sendMail(mailOptions)
-            .catch(err => console.error("[contact] Error email:", err?.message));
+            .then(info => console.log("[contact] Email sent:", info.messageId))
+            .catch(err => console.error("[contact] Error email:", err));
 
         res.json({ success: true, message: "Mensaje enviado correctamente" });
     } catch (error) {
@@ -61,4 +61,8 @@ app.get("/api/health", (_req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
+    console.log("[config] SMTP_HOST:", process.env.SMTP_HOST || "NOT SET");
+    console.log("[config] SMTP_PORT:", process.env.SMTP_PORT || "NOT SET");
+    console.log("[config] SMTP_USER:", process.env.SMTP_USER ? "SET" : "NOT SET");
+    console.log("[config] CONTACT_EMAIL:", process.env.CONTACT_EMAIL || "NOT SET");
 });
