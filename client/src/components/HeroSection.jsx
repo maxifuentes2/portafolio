@@ -58,6 +58,7 @@ export default function HeroSection() {
     return (
         <section id="hero" ref={ref} className="hero-section">
             <motion.div className="hero-content">
+                <span className="section-number hero-section-number">00</span>
                 <motion.p
                     className="hero-label"
                     initial={{ y: 30, opacity: 0 }}
@@ -82,6 +83,13 @@ export default function HeroSection() {
                     ))}
                 </h1>
 
+                <motion.div
+                    className="hero-separator"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+                />
+
                 <motion.p
                     className="hero-subtitle"
                     initial={{ y: 30, opacity: 0 }}
@@ -102,8 +110,8 @@ export default function HeroSection() {
                         onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
                         className="btn-primary"
                     >
-                        Ver proyectos
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <span>Ver proyectos</span>
+                        <svg className="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
                         </svg>
                     </button>
@@ -111,7 +119,10 @@ export default function HeroSection() {
                         onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                         className="btn-secondary"
                     >
-                        Contáctame
+                        <span>Contáctame</span>
+                        <svg className="btn-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                        </svg>
                     </button>
                 </motion.div>
             </motion.div>

@@ -20,11 +20,11 @@
     --color-primary-dark: #dc2626;
     --color-accent: #f87171;
     --color-accent-rgb: 248, 113, 113;
-    --text-primary: #f1f1f1;
-    --text-secondary: #999999;
-    --text-muted: #666666;
-    --bg-card: rgba(20,20,20,0.85);
-    --border-light: rgba(239,68,68,0.08);
+    --text-primary: #f5f5f5;
+    --text-secondary: #bbbbbb;
+    --text-muted: #888888;
+    --bg-card: rgba(25,25,25,0.92);
+    --border-light: rgba(239,68,68,0.12);
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
     --shadow-md: 0 4px 15px rgba(0,0,0,0.18);
     --shadow-lg: 0 8px 30px rgba(0,0,0,0.22);
@@ -47,6 +47,26 @@ body, html {
     z-index: 1;
     perspective: 1200px;
     transform-style: preserve-3d;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.section-header .section-title {
+    margin-bottom: 0;
+}
+
+.section-number {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 2px;
+    opacity: 0.5;
 }
 
 .section-title {
@@ -77,48 +97,93 @@ body, html {
 .btn-primary {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.6rem;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-    color: white;
+    gap: 0.75rem;
+    padding: 0;
+    background: none;
+    color: var(--color-primary);
     font-weight: 600;
     font-size: 0.9rem;
     text-decoration: none;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(var(--color-primary-rgb), 0.25);
+    transition: color 0.3s ease;
     font-family: inherit;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.btn-primary::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+    border-radius: 1px;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(var(--color-primary-rgb), 0.35);
+    color: var(--color-accent);
+}
+
+.btn-primary:hover::after {
+    width: 100%;
+}
+
+.btn-primary .btn-arrow {
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .btn-arrow {
+    transform: translateX(4px);
 }
 
 .btn-secondary {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.6rem;
-    border-radius: 8px;
-    background: transparent;
+    padding: 0;
+    background: none;
     color: var(--text-secondary);
     font-weight: 600;
     font-size: 0.9rem;
     text-decoration: none;
-    border: 1px solid var(--border-light);
+    border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
     font-family: inherit;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.btn-secondary::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+    border-radius: 1px;
 }
 
 .btn-secondary:hover {
-    border-color: var(--color-primary);
     color: var(--color-primary);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:hover::after {
+    width: 100%;
+}
+
+.btn-secondary .btn-arrow {
+    transition: transform 0.3s ease;
+}
+
+.btn-secondary:hover .btn-arrow {
+    transform: translateX(3px);
 }
 
 .error404 {

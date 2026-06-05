@@ -10,8 +10,8 @@
 }
 
 .dark-mode .footer {
-    background: rgba(6, 10, 20, 0.05);
-    border-top-color: rgba(70, 150, 255, 0.04);
+    background: rgba(0, 0, 0, 0.05);
+    border-top-color: rgba(255, 255, 255, 0.03);
 }
 
 .footer-content {

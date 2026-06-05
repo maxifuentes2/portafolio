@@ -38,13 +38,15 @@ export default function ContactSection() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const API_URL = import.meta.env.VITE_API_URL || "/api";
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setSending(true);
         setSent(false);
 
         try {
-            const res = await fetch("/api/contact", {
+            const res = await fetch(`${API_URL}/contact`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
@@ -65,14 +67,17 @@ export default function ContactSection() {
     return (
         <section id="contact" ref={ref} className="contact-section">
             <div className="contact-container">
-                <motion.h2
-                    className="section-title"
+                <motion.div
+                    className="section-header"
                     initial={{ y: 40, opacity: 0 }}
                     animate={isInView ? { y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    Contáctame
-                </motion.h2>
+                    <span className="section-number">03</span>
+                    <h2 className="section-title">
+                        Contáctame
+                    </h2>
+                </motion.div>
 
                 <motion.p
                     className="section-subtitle"
@@ -86,7 +91,7 @@ export default function ContactSection() {
 
                 <div className="contact-grid">
                     <motion.div
-                        className="contact-card contact-info"
+                        className="contact-info"
                         initial={{ x: -60, opacity: 0 }}
                         animate={isInView ? { x: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
@@ -114,7 +119,7 @@ export default function ContactSection() {
                     </motion.div>
 
                     <motion.div
-                        className="contact-card contact-form"
+                        className="contact-form-card"
                         initial={{ x: 60, opacity: 0 }}
                         animate={isInView ? { x: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
@@ -166,9 +171,14 @@ export default function ContactSection() {
                                         Enviando...
                                     </span>
                                 ) : sent ? (
-                                    "Mensaje enviado ✓"
+                                    <span>Mensaje enviado ✓</span>
                                 ) : (
-                                    "Enviar mensaje"
+                                    <>
+                                        <span>Enviar mensaje</span>
+                                        <svg className="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                                        </svg>
+                                    </>
                                 )}
                             </button>
                         </form>

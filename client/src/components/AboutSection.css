@@ -3,12 +3,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6rem 2rem;
+    padding: 7rem 2rem;
     position: relative;
 }
 
 .about-container {
-    max-width: 960px;
+    max-width: 1000px;
     width: 100%;
     will-change: transform;
 }
@@ -16,105 +16,121 @@
 .about-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
     margin-top: 2rem;
     align-items: start;
 }
 
-.about-card {
-    border-radius: 12px;
-    padding: 2rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: all 0.3s ease;
+.about-bio {
+    position: relative;
 }
 
-.about-card:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-2px);
+.about-bio:hover .about-bio-bar {
+    height: 70%;
 }
 
-.about-text {
-    font-size: 1rem;
+.about-bio-bar {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
+    border-radius: 2px;
+    transition: height 0.5s ease, top 0.5s ease;
+}
+
+.dark-mode .about-bio-bar {
+    opacity: 0.7;
+}
+
+.about-intro {
+    font-size: 1.15rem;
     line-height: 1.8;
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    font-weight: 500;
 }
 
 .bio-list {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
 }
 
 .bio-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.7rem 1rem;
-    border-radius: 8px;
-    background: rgba(var(--color-primary-rgb), 0.03);
-    border: 1px solid var(--border-light);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-light);
     transition: all 0.3s ease;
 }
 
 .bio-row:hover {
-    background: rgba(var(--color-primary-rgb), 0.06);
-    transform: translateX(4px);
+    padding-left: 0.5rem;
 }
 
 .bio-label {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    display: block;
-    margin-bottom: 0.5rem;
 }
 
 .bio-value {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-primary);
     font-weight: 500;
-    text-align: right;
+}
+
+.about-section-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
 }
 
 .about-studies {
-    padding: 0.7rem 1rem;
-    border-radius: 8px;
-    background: rgba(var(--color-primary-rgb), 0.03);
-    border: 1px solid var(--border-light);
-    margin-bottom: 0.5rem;
-}
-
-.about-studies .bio-label {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
 }
 
 .studies-text {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: 0.4rem;
+    font-size: 0.88rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background: rgba(var(--color-primary-rgb), 0.04);
+    border-left: 3px solid rgba(var(--color-primary-rgb), 0.25);
+    transition: border-color 0.3s ease, background 0.3s ease;
 }
 
-.studies-text:last-child {
-    margin-bottom: 0;
+.studies-text:hover {
+    border-left-color: var(--color-accent);
+    background: rgba(var(--color-primary-rgb), 0.08);
+}
+
+.dark-mode .studies-text {
+    background: rgba(255,255,255,0.04);
+    border-left-color: var(--color-primary);
+}
+
+.dark-mode .studies-text:hover {
+    background: rgba(255,255,255,0.07);
 }
 
 .about-tech {
-    padding: 0.7rem 1rem;
-    border-radius: 8px;
-    background: rgba(var(--color-primary-rgb), 0.03);
-    border: 1px solid var(--border-light);
-}
-
-.about-tech .bio-label {
-    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    margin-top: 2rem;
 }
 
 .tech-tags {
@@ -124,18 +140,29 @@
 }
 
 .tech-tag {
-    padding: 0.3rem 0.8rem;
-    border-radius: 6px;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--color-primary);
-    background: rgba(var(--color-primary-rgb), 0.08);
-    border: 1px solid rgba(var(--color-primary-rgb), 0.12);
+    color: white;
+    background: var(--color-primary);
+    border: none;
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.tech-tag:hover {
+    box-shadow: 0 0 0 2px var(--color-accent), 0 0 12px rgba(var(--color-primary-rgb), 0.4);
 }
 
 .dark-mode .tech-tag {
-    background: rgba(var(--color-primary-rgb), 0.12);
-    border-color: rgba(var(--color-primary-rgb), 0.15);
+    background: rgba(239,68,68,0.12);
+    color: var(--color-primary);
+}
+
+.dark-mode .tech-tag:hover {
+    background: rgba(239,68,68,0.2);
+    box-shadow: 0 0 0 2px var(--color-accent), 0 0 14px rgba(239,68,68,0.3);
 }
 
 .about-stats {
@@ -144,6 +171,17 @@
     gap: 1.5rem;
     align-items: center;
     padding: 2.5rem 2rem;
+    border-radius: 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    position: sticky;
+    top: 6rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.about-stats:hover {
+    box-shadow: 0 8px 30px rgba(var(--color-primary-rgb), 0.1);
+    transform: translateY(-2px);
 }
 
 .stat-item {
@@ -154,10 +192,10 @@
 }
 
 .stat-number {
-    font-size: 2.8rem;
+    font-size: 3rem;
     font-weight: 700;
     line-height: 1;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
 }
 
 .stat-label {
@@ -183,9 +221,25 @@
         grid-template-columns: 1fr;
     }
 
+    .about-bio-bar {
+        display: none;
+    }
+
+    .about-intro {
+        padding-left: 0;
+    }
+
+    .bio-list,
+    .about-section-title,
+    .about-studies,
+    .about-tech {
+        padding-left: 0;
+    }
+
     .about-stats {
         flex-direction: row;
         padding: 1.5rem;
+        position: static;
     }
 
     .stat-divider {
@@ -197,9 +251,5 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 0.2rem;
-    }
-
-    .bio-value {
-        text-align: left;
     }
 }

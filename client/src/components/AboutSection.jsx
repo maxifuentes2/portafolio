@@ -36,23 +36,27 @@ export default function AboutSection() {
     return (
         <section id="about" ref={ref} className="about-section">
             <div className="about-container">
-                <motion.h2
-                    className="section-title"
+                <motion.div
+                    className="section-header"
                     initial={{ y: 40, opacity: 0 }}
                     animate={isInView ? { y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    Sobre <span className="gradient-text">mí</span>
-                </motion.h2>
+                    <span className="section-number">01</span>
+                    <h2 className="section-title">
+                        Sobre <span className="gradient-text">mí</span>
+                    </h2>
+                </motion.div>
 
                 <div className="about-grid">
                     <motion.div
-                        className="about-card about-bio"
+                        className="about-bio"
                         initial={{ y: 60, opacity: 0 }}
                         animate={isInView ? { y: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
                     >
-                        <p className="about-text">
+                        <span className="about-bio-bar" />
+                        <p className="about-intro">
                             Amante del diseño web y la experiencia de usuario. Me encanta
                             trabajar en proyectos desafiantes y aprender nuevas tecnologías.
                         </p>
@@ -72,13 +76,13 @@ export default function AboutSection() {
                             ))}
                         </div>
 
+                        <span className="about-section-title">Estudios</span>
                         <motion.div
                             className="about-studies"
                             initial={{ x: -20, opacity: 0 }}
                             animate={isInView ? { x: 0, opacity: 1 } : {}}
                             transition={{ duration: 0.4, delay: 0.36 }}
                         >
-                            <span className="bio-label">Estudios</span>
                             <p className="studies-text">
                                 Licenciatura en Informática y Desarrollo de Software en la
                                 Universidad del Aconcagua, Mendoza. (2025 - Actualidad)
@@ -88,13 +92,13 @@ export default function AboutSection() {
                             </p>
                         </motion.div>
 
+                        <span className="about-section-title">Tecnologías</span>
                         <motion.div
                             className="about-tech"
                             initial={{ x: -20, opacity: 0 }}
                             animate={isInView ? { x: 0, opacity: 1 } : {}}
                             transition={{ duration: 0.4, delay: 0.44 }}
                         >
-                            <span className="bio-label">Tecnologías</span>
                             <div className="tech-tags">
                                 {["HTML", "CSS", "JavaScript", "React.js"].map((tech, i) => (
                                     <span key={i} className="tech-tag">{tech}</span>
@@ -104,7 +108,7 @@ export default function AboutSection() {
                     </motion.div>
 
                     <motion.div
-                        className="about-card about-stats"
+                        className="about-stats"
                         initial={{ y: 60, opacity: 0 }}
                         animate={isInView ? { y: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}

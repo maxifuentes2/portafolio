@@ -67,14 +67,17 @@ export default function ProjectsSection() {
     return (
         <section id="projects" ref={ref} className="projects-section">
             <div className="projects-container">
-                <motion.h2
-                    className="section-title"
+                <motion.div
+                    className="section-header"
                     initial={{ y: 40, opacity: 0 }}
                     animate={isInView ? { y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    Mis <span className="gradient-text">Proyectos</span>
-                </motion.h2>
+                    <span className="section-number">02</span>
+                    <h2 className="section-title">
+                        Mis <span className="gradient-text">Proyectos</span>
+                    </h2>
+                </motion.div>
 
                 <motion.p
                     className="section-subtitle"
