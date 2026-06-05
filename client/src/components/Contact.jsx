@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useToast } from "./Toast.jsx";
 import "./Contact.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -17,6 +18,7 @@ export default function ContactSection() {
     });
     const [sending, setSending] = useState(false);
     const [sent, setSent] = useState(false);
+    const { toast } = useToast();
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -38,7 +40,7 @@ export default function ContactSection() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const API_URL = import.meta.env.VITE_API_URL || "/api";
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -46,18 +48,24 @@ export default function ContactSection() {
         setSent(false);
 
         try {
-            const res = await fetch(`${API_URL}/contact`, {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 15000);
+
+            const res = await fetch(`${API_URL}/api/contact`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
+                signal: controller.signal,
             });
+            clearTimeout(timeout);
 
             if (!res.ok) throw new Error("Error al enviar");
 
             setSent(true);
             setFormData({ name: "", email: "", message: "" });
+            toast("Mensaje enviado con éxito", "success");
         } catch (error) {
-            alert("Error al enviar el mensaje. Intenta de nuevo.");
+            toast("Error al enviar el mensaje. Intenta de nuevo.", "error");
             console.error(error);
         } finally {
             setSending(false);

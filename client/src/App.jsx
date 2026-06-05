@@ -6,6 +6,7 @@ import ProjectsSection from './components/Projects.jsx';
 import ContactSection from './components/Contact.jsx';
 import TechParallax from './components/TechParallax.jsx';
 import Footer from './components/Footer.jsx';
+import { ToastProvider } from './components/Toast.jsx';
 import './App.css';
 
 function App() {
@@ -24,17 +25,19 @@ function App() {
     }, [darkMode]);
 
     return (
-        <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
-            <TechParallax darkMode={darkMode} />
-            <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
-            <main className="main-content">
-                <HeroSection />
-                <AboutSection />
-                <ProjectsSection />
-                <ContactSection />
-            </main>
-            <Footer />
-        </div>
+        <ToastProvider>
+            <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
+                <TechParallax darkMode={darkMode} />
+                <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+                <main className="main-content">
+                    <HeroSection />
+                    <AboutSection />
+                    <ProjectsSection />
+                    <ContactSection />
+                </main>
+                <Footer />
+            </div>
+        </ToastProvider>
     );
 }
 

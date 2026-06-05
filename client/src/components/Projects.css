@@ -211,6 +211,15 @@
     transform: translate(2px, -2px);
 }
 
+.project-link-info {
+    cursor: pointer;
+    font-family: inherit;
+    color: var(--color-primary);
+}
+.project-link-info:hover {
+    color: var(--color-accent);
+}
+
 @media (max-width: 768px) {
     .projects-section {
         padding: 5rem 1.2rem;
