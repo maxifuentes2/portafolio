@@ -14,6 +14,7 @@ export default function ContactSection() {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
+        subject: "",
         message: "",
     });
     const [sending, setSending] = useState(false);
@@ -62,7 +63,7 @@ export default function ContactSection() {
             if (!res.ok) throw new Error("Error al enviar");
 
             setSent(true);
-            setFormData({ name: "", email: "", message: "" });
+            setFormData({ name: "", email: "", subject: "", message: "" });
             toast("Mensaje enviado con éxito", "success");
         } catch (error) {
             toast("Error al enviar el mensaje. Intenta de nuevo.", "error");
@@ -157,6 +158,17 @@ export default function ContactSection() {
                                     />
                                 </label>
                             </div>
+                            <label className="form-group">
+                                <span className="form-label">Asunto</span>
+                                <input
+                                    type="text"
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    placeholder="Motivo del mensaje"
+                                    required
+                                />
+                            </label>
                             <label className="form-group">
                                 <span className="form-label">Mensaje</span>
                                 <textarea
