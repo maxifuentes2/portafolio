@@ -11,12 +11,12 @@ app.use(express.json());
 
 const createTransporter = () => {
     const host = process.env.SMTP_HOST || "smtp.gmail.com";
-    const port = parseInt(process.env.SMTP_PORT || "587");
+    const port = parseInt(process.env.SMTP_PORT || "465");
     const user = process.env.SMTP_USER;
     const pass = process.env.SMTP_PASS;
     if (!user || !pass) return null;
     return nodemailer.createTransport({
-        host, port, secure: false,
+        host, port, secure: port === 465,
         auth: { user, pass },
         connectionTimeout: 30000,
         greetingTimeout: 30000,
