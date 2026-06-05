@@ -5,6 +5,7 @@
     justify-content: center;
     padding: 7rem 2rem;
     position: relative;
+    scroll-margin-top: 70px;
 }
 
 .contact-container {

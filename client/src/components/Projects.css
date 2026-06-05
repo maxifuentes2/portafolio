@@ -6,6 +6,7 @@
     padding: 8rem 2rem;
     position: relative;
     overflow: hidden;
+    scroll-margin-top: 70px;
 }
 
 .projects-section::before {

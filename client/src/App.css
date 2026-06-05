@@ -204,3 +204,12 @@ body, html {
         padding: 0 0.5rem;
     }
 }
+
+@media (max-width: 768px) {
+    .hero-section,
+    .about-section,
+    .projects-section,
+    .contact-section {
+        scroll-margin-top: 60px;
+    }
+}
