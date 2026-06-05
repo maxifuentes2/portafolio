@@ -10,12 +10,10 @@ app.use(cors());
 app.use(express.json());
 
 const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT),
-    secure: false,
-    connectionTimeout: 5000,
-    greetingTimeout: 5000,
-    socketTimeout: 10000,
+    service: "gmail",
+    connectionTimeout: 15000,
+    greetingTimeout: 15000,
+    socketTimeout: 20000,
     auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
