@@ -9,24 +9,24 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-const createTransporter = () => {
+const createTransporters = () => {
     const host = process.env.SMTP_HOST || "smtp.gmail.com";
-    const port = parseInt(process.env.SMTP_PORT || "465");
+    const ports = process.env.SMTP_PORT ? [parseInt(process.env.SMTP_PORT)] : [587, 465];
     const user = process.env.SMTP_USER;
     const pass = process.env.SMTP_PASS;
-    if (!user || !pass) return null;
-    return nodemailer.createTransport({
+    if (!user || !pass) return [];
+    return ports.map(port => nodemailer.createTransport({
         host, port, secure: port === 465,
         auth: { user, pass },
-        connectionTimeout: 30000,
-        greetingTimeout: 30000,
-        socketTimeout: 30000,
-    });
+        connectionTimeout: 15000,
+        greetingTimeout: 15000,
+        socketTimeout: 20000,
+    }));
 };
 
 const sendEmail = async (to, subject, html, replyTo) => {
-    const transporter = createTransporter();
-    if (!transporter) {
+    const transporters = createTransporters();
+    if (transporters.length === 0) {
         console.error("[email] SMTP no configurado");
         return { error: true, reason: "SMTP not configured" };
     }
@@ -39,14 +39,18 @@ const sendEmail = async (to, subject, html, replyTo) => {
         html,
     };
 
-    try {
-        await transporter.sendMail(mailOptions);
-        console.log("[email] OK to:", to);
-        return { success: true };
-    } catch (err) {
-        console.error("[email] Error:", err.message);
-        return { error: true, reason: err.message };
+    for (const transporter of transporters) {
+        const port = transporter.options.port;
+        try {
+            await transporter.sendMail(mailOptions);
+            console.log("[email] OK to:", to, "via port", port);
+            return { success: true };
+        } catch (err) {
+            console.error("[email] Error port", port + ":", err.message);
+        }
     }
+
+    return { error: true, reason: "All SMTP ports failed" };
 };
 
 app.post("/api/contact", async (req, res) => {
@@ -124,11 +128,14 @@ app.listen(PORT, () => {
     console.log("[config] SMTP_PASS:", process.env.SMTP_PASS ? "SET" : "NOT SET");
     console.log("[config] CONTACT_EMAIL:", process.env.CONTACT_EMAIL || "NOT SET");
 
-    const t = createTransporter();
-    if (t) {
-        t.verify()
-            .then(() => console.log("[config] SMTP connection verified"))
-            .catch(err => console.error("[config] SMTP verify failed:", err.message));
+    const transporters = createTransporters();
+    if (transporters.length > 0) {
+        for (const t of transporters) {
+            const port = t.options.port;
+            t.verify()
+                .then(() => console.log("[config] SMTP port", port, "verified"))
+                .catch(err => console.error("[config] SMTP port", port, "failed:", err.message));
+        }
     } else {
         console.error("[config] SMTP not configured — missing SMTP_USER or SMTP_PASS");
     }
