@@ -161,3 +161,29 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 400px) {
+    .modal-overlay {
+        padding: 0.5rem;
+    }
+
+    .modal-content {
+        border-radius: 10px;
+    }
+
+    .modal-header {
+        padding: 1.25rem 1rem 0.75rem;
+    }
+
+    .modal-body {
+        padding: 0.75rem 1rem 1.25rem;
+    }
+
+    .modal-title {
+        font-size: 1.2rem;
+    }
+
+    .modal-text {
+        font-size: 0.8rem;
+    }
+}

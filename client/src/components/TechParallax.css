@@ -26,3 +26,9 @@
     left: 0;
     will-change: transform;
 }
+
+@media (max-width: 768px) {
+    .tech-parallax {
+        display: none;
+    }
+}

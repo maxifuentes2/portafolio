@@ -8,7 +8,7 @@
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(245, 240, 234, 0.25);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     transition: all 0.4s ease;
@@ -16,18 +16,17 @@
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(245, 240, 234, 0.75);
     border-bottom: 1px solid rgba(0,0,0,0.05);
     box-shadow: 0 2px 20px rgba(0,0,0,0.03);
 }
 
 .dark-mode .navbar {
-    background: rgba(6, 10, 20, 0.1);
+    background: rgba(10, 10, 12, 0.1);
 }
 
 .dark-mode .navbar.scrolled {
-    background: rgba(6, 10, 20, 0.5);
-    border-bottom: 1px solid rgba(70, 150, 255, 0.08);
+    background: rgba(10, 10, 12, 0.55);
     box-shadow: 0 2px 20px rgba(0,0,0,0.15);
 }
 
@@ -172,6 +171,7 @@
     cursor: pointer;
     padding: 8px;
     border-radius: 6px;
+    position: relative;
     z-index: 99;
 }
 
@@ -179,7 +179,7 @@
     display: block;
     width: 20px;
     height: 2px;
-    background: var(--text-muted);
+    background: var(--text-primary);
     border-radius: 1px;
     transition: all 0.3s ease;
 }
@@ -202,7 +202,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.08);
     display: none;
     z-index: 98;
     backdrop-filter: blur(4px);
@@ -226,9 +226,7 @@
         flex-direction: column;
         gap: 0.3rem;
         padding: 5rem 1.5rem 2rem;
-        background: rgba(255, 255, 255, 0.92);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
+        background: #f8f5f0;
         transition: right 0.35s ease;
         z-index: 99;
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.04);
@@ -237,7 +235,7 @@
     }
 
     .dark-mode .navbar-links {
-        background: rgba(6, 10, 20, 0.95);
+        background: #0c0c0f;
     }
 
     .navbar-links.open {
@@ -253,5 +251,30 @@
 
     .hamburger {
         display: flex;
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar {
+        padding: 0.55rem 0.8rem;
+    }
+
+    .navbar-links {
+        width: 220px;
+        right: -240px;
+        padding: 4.5rem 1rem 2rem;
+    }
+
+    .navbar-links.open {
+        right: 0;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+    }
+
+    .navbar-logo-img {
+        height: 28px;
     }
 }
