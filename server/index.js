@@ -44,10 +44,13 @@ app.post("/api/contact", async (req, res) => {
     };
 
     try {
-        await transporter.sendMail(mailOptions);
+        // No bloqueamos la respuesta si el email falla
+        transporter.sendMail(mailOptions)
+            .catch(err => console.error("[contact] Error email:", err?.message));
+
         res.json({ success: true, message: "Mensaje enviado correctamente" });
     } catch (error) {
-        console.error("Error sending email:", error);
+        console.error("Error al procesar mensaje:", error);
         res.status(500).json({ error: "Error al enviar el mensaje. Intenta de nuevo." });
     }
 });
