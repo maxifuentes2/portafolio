@@ -11,7 +11,10 @@ app.use(express.json());
 
 const createTransporters = () => {
     const host = process.env.SMTP_HOST || "smtp.gmail.com";
-    const ports = process.env.SMTP_PORT ? [parseInt(process.env.SMTP_PORT)] : [587, 465];
+    const configuredPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT) : null;
+    const ports = configuredPort
+        ? [...new Set([configuredPort, configuredPort === 587 ? 465 : 587])]
+        : [587, 465];
     const user = process.env.SMTP_USER;
     const pass = process.env.SMTP_PASS;
     if (!user || !pass) return [];
